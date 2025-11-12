@@ -1,4 +1,4 @@
-name: CI - Web Statis Sederhana
+name: CI - HTML Lint
 
 on:
   push:
@@ -7,19 +7,19 @@ on:
     branches: [ main ]
 
 jobs:
-  validate:
-    name: Validate HTML File
+  lint:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Run HTML Validator
-        uses: Cyb3r-Jak3/html5validator-action@v0.4.0
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          root: ./
-          blacklist: "vendor,node_modules"
+          node-version: '20'
 
-      - name: Show result
-        run: echo "✅ HTML validation completed successfully!"
+      - name: Install HTMLHint
+        run: npm install -g htmlhint
+
+      - name: Run HTMLHint
+        run: htmlhint "**/*.html"
