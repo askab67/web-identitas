@@ -1,0 +1,25 @@
+name: CI - Web Statis Sederhana
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate:
+    name: Validate HTML File
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Run HTML Validator
+        uses: Cyb3r-Jak3/html5validator-action@v1.0.0
+        with:
+          root: ./
+          blacklist: "vendor,node_modules"
+
+      - name: Show result
+        run: echo "✅ HTML validation completed successfully!"

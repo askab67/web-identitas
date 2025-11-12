@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>M. Askhab Firdaus</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-main: #111;
+      --bg-card: rgba(20, 20, 20, 0.6);
+      --text-color: #d6d6d6;
+      --accent: #bb86fc;
+      --nav-bg: rgba(0,0,0,0.6);
+      --footer-bg: rgba(0,0,0,0.6);
+    }
+
+    body.light {
+      --bg-main: #f5f5f5;
+      --bg-card: rgba(255, 255, 255, 0.8);
+      --text-color: #222;
+      --accent: #6200ee;
+      --nav-bg: rgba(255,255,255,0.8);
+      --footer-bg: rgba(255,255,255,0.8);
+    }
+
+    /* === GLOBAL === */
+    * { transition: background 0.4s ease, color 0.4s ease; }
+
+    body {
+    font-family: "Sofia Sans", sans-serif;
+    background: var(--bg-main) url('https://w.wallhaven.cc/full/1q/wallhaven-1q83qg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    }
+
+    body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: var(--bg-main);
+    opacity: 0.3; 
+    z-index: -1;
+    }
+
+    /* === NAVBAR === */
+    header {
+      background: var(--nav-bg);
+      backdrop-filter: blur(8px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    body.light header {
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand h1 {
+      color: var(--accent);
+      font-size: 1.3rem;
+      letter-spacing: 1px;
+      margin: 0;
+    }
+
+    /* === THEME TOGGLE === */
+    .theme-toggle {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1.3rem;
+      color: var(--accent);
+      transition: transform 0.3s;
+    }
+
+    .theme-toggle:hover {
+      transform: rotate(20deg);
+    }
+
+    nav a {
+      color: var(--text-color);
+      text-decoration: none;
+      margin-left: 25px;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    /* === CONTENT === */
+    .container {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 20px;
+    }
+
+    .content {
+      max-width: 700px;
+      background: var(--bg-card);
+      backdrop-filter: blur(10px);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+
+    .content h2 {
+      color: var(--text-color);
+      font-size: 1.8rem;
+    }
+
+    .content p {
+      color: var(--text-color);
+      line-height: 1.6;
+      font-size: 1rem;
+    }
+
+    .links {
+      margin-top: 25px;
+    }
+
+    .links a {
+      color: var(--accent);
+      text-decoration: none;
+      display: inline-block;
+      margin-right: 15px;
+      transition: opacity 0.3s;
+    }
+
+    .links a:hover {
+      opacity: 0.7;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      color: var(--text-color);
+      font-size: 0.9rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      background: var(--footer-bg);
+    }
+
+    body.light footer {
+      border-top: 1px solid rgba(0,0,0,0.1);
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+      nav {
+        margin-top: 10px;
+      }
+      .content {
+        padding: 25px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header>
+    <div class="brand">
+      <h1>Askhab Firdaus</h1>
+      <button class="theme-toggle" id="themeToggle" title="Ganti Tema">🌙</button>
+    </div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- CONTENT -->
+  <div class="container">
+    <div class="content">
+      <h2 id="about">Halo, Saya Askhab 👋</h2>
+      <p>
+        Saya <strong>Mohamad Askhab Firdaus</strong>, biasa dipanggil <strong>Askhab</strong> (NIM: 230411100067), mahasiswa Informatika Universitas Trunojoyo Madura.  
+        Part-time ngoding, part-time ngopi, dan full-time pura-pura <strong>pinter</strong>.
+        </p>
+        <p>
+        Kadang suka bereksperimen dengan hal-hal yang bahkan saya sendiri nggak yakin bakal berhasil — 
+        tapi justru dari situ banyak ide aneh yang berubah jadi sesuatu yang keren (kadang juga berantakan).
+        </p>
+
+        <p>
+        Jarang bisa hidup tanpa <strong>Gudang Garam</strong>, dan sering kali ide-ide terbaik justru muncul di tengah aroma tembakau 
+        dan notifikasi error.
+        </p>
+
+        <p>
+        Saat ini saya sedang menempuh studi di <strong>Universitas Trunojoyo Madura</strong>, jurusan 
+        <strong>Teknik Informatika</strong>, dengan minat di bidang <strong>Web Development</strong> dan <strong>UI/UX Design</strong>.
+        </p>
+
+        <p>
+        Kadang menyesal masuk Informatika, tapi ya udah… <em>terlanjur bisa “Hello World”</em>, jadi dilanjut aja.
+        </p>
+
+      <p href="#" onclick="copyToClipboard('askhaboy89@gmail.com')">askhaboy89[at]gmail.com</p><br/>
+
+      <br class="links">
+        <a href="#projects">> Lihat Project</a><br />
+        <a href="#contact">> Kontak Saya</a><br />
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2025 Askhab Firdaus — PPL
+  </footer>
+
+  <script>
+    const toggleBtn = document.getElementById('themeToggle');
+    const body = document.body;
+
+    if (localStorage.getItem('theme') === 'light') {
+      body.classList.add('light');
+      toggleBtn.textContent = '☀️';
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      body.classList.toggle('light');
+      const isLight = body.classList.contains('light');
+      toggleBtn.textContent = isLight ? '☀️' : '🌙';
+      localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    });
+  </script>
+  <script>
+    function copyToClipboard(text) {
+        var tempInput = document.createElement("textarea");
+        tempInput.value = text;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand("copy");
+        document.body.removeChild(tempInput);
+        alert("Email telah disalin ke clipboard!");
+    }
+ </script>
+</body>
+</html>
