@@ -24,31 +24,29 @@
       --footer-bg: rgba(255,255,255,0.8);
     }
 
-    /* === GLOBAL === */
     * { transition: background 0.4s ease, color 0.4s ease; }
 
     body {
-    font-family: "Sofia Sans", sans-serif;
-    background: var(--bg-main) url('https://w.wallhaven.cc/full/1q/wallhaven-1q83qg.jpg') no-repeat center center fixed;
-    background-size: cover;
-    color: var(--text-color);
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+      font-family: "Sofia Sans", sans-serif;
+      background: var(--bg-main) url('https://w.wallhaven.cc/full/1q/wallhaven-1q83qg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: var(--text-color);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
 
     body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: var(--bg-main);
-    opacity: 0.3; 
-    z-index: -1;
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: var(--bg-main);
+      opacity: 0.3; 
+      z-index: -1;
     }
 
-    /* === NAVBAR === */
     header {
       background: var(--nav-bg);
       backdrop-filter: blur(8px);
@@ -79,7 +77,6 @@
       margin: 0;
     }
 
-    /* === THEME TOGGLE === */
     .theme-toggle {
       background: none;
       border: none;
@@ -105,7 +102,6 @@
       color: var(--accent);
     }
 
-    /* === CONTENT === */
     .container {
       flex: 1;
       display: flex;
@@ -162,23 +158,9 @@
     body.light footer {
       border-top: 1px solid rgba(0,0,0,0.1);
     }
-
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        text-align: center;
-      }
-      nav {
-        margin-top: 10px;
-      }
-      .content {
-        padding: 25px;
-      }
-    }
   </style>
 </head>
 <body>
-  <!-- NAVBAR -->
   <header>
     <div class="brand">
       <h1>Askhab Firdaus</h1>
@@ -191,73 +173,52 @@
     </nav>
   </header>
 
-  <!-- CONTENT -->
   <div class="container">
     <div class="content">
       <h2 id="about">Halo, Saya Askhab 👋</h2>
+      <p>Saya <strong>Mohamad Askhab Firdaus</strong>, biasa dipanggil <strong>Askhab</strong> (NIM: 230411100067), mahasiswa Informatika Universitas Trunojoyo Madura.  
+      Part-time ngoding, part-time ngopi, dan full-time pura-pura <strong>pinter</strong>.</p>
+      <p>Kadang suka bereksperimen dengan hal-hal yang bahkan saya sendiri nggak yakin bakal berhasil — tapi justru dari situ banyak ide aneh yang berubah jadi sesuatu yang keren (kadang juga berantakan).</p>
+      <p>Jarang bisa hidup tanpa <strong>Gudang Garam</strong>, dan sering kali ide-ide terbaik justru muncul di tengah aroma tembakau dan notifikasi error.</p>
+      <p>Saat ini saya sedang menempuh studi di <strong>Universitas Trunojoyo Madura</strong>, jurusan <strong>Teknik Informatika</strong>, dengan minat di bidang <strong>Web Development</strong> dan <strong>UI/UX Design</strong>.</p>
+      <p>Kadang menyesal masuk Informatika, tapi ya udah… <em>terlanjur bisa “Hello World”</em>, jadi dilanjut aja.</p>
+
       <p>
-        Saya <strong>Mohamad Askhab Firdaus</strong>, biasa dipanggil <strong>Askhab</strong> (NIM: 230411100067), mahasiswa Informatika Universitas Trunojoyo Madura.  
-        Part-time ngoding, part-time ngopi, dan full-time pura-pura <strong>pinter</strong>.
-        </p>
-        <p>
-        Kadang suka bereksperimen dengan hal-hal yang bahkan saya sendiri nggak yakin bakal berhasil — 
-        tapi justru dari situ banyak ide aneh yang berubah jadi sesuatu yang keren (kadang juga berantakan).
-        </p>
+        <a href="#" onclick="copyToClipboard('askhaboy89@gmail.com'); return false;">askhaboy89[at]gmail.com</a>
+      </p>
 
-        <p>
-        Jarang bisa hidup tanpa <strong>Gudang Garam</strong>, dan sering kali ide-ide terbaik justru muncul di tengah aroma tembakau 
-        dan notifikasi error.
-        </p>
-
-        <p>
-        Saat ini saya sedang menempuh studi di <strong>Universitas Trunojoyo Madura</strong>, jurusan 
-        <strong>Teknik Informatika</strong>, dengan minat di bidang <strong>Web Development</strong> dan <strong>UI/UX Design</strong>.
-        </p>
-
-        <p>
-        Kadang menyesal masuk Informatika, tapi ya udah… <em>terlanjur bisa “Hello World”</em>, jadi dilanjut aja.
-        </p>
-
-      <p href="#" onclick="copyToClipboard('askhaboy89@gmail.com')">askhaboy89[at]gmail.com</p><br/>
-
-      <br class="links">
+      <div class="links">
         <a href="#projects">> Lihat Project</a><br />
         <a href="#contact">> Kontak Saya</a><br />
       </div>
     </div>
   </div>
 
-  <!-- FOOTER -->
-  <footer>
-    © 2025 Askhab Firdaus — PPL
-  </footer>
+  <footer>© 2025 Askhab Firdaus — PPL</footer>
 
   <script>
     const toggleBtn = document.getElementById('themeToggle');
     const body = document.body;
-
     if (localStorage.getItem('theme') === 'light') {
       body.classList.add('light');
       toggleBtn.textContent = '☀️';
     }
-
     toggleBtn.addEventListener('click', () => {
       body.classList.toggle('light');
       const isLight = body.classList.contains('light');
       toggleBtn.textContent = isLight ? '☀️' : '🌙';
       localStorage.setItem('theme', isLight ? 'light' : 'dark');
     });
-  </script>
-  <script>
+
     function copyToClipboard(text) {
-        var tempInput = document.createElement("textarea");
-        tempInput.value = text;
-        document.body.appendChild(tempInput);
-        tempInput.select();
-        document.execCommand("copy");
-        document.body.removeChild(tempInput);
-        alert("Email telah disalin ke clipboard!");
+      const tempInput = document.createElement("textarea");
+      tempInput.value = text;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      document.execCommand("copy");
+      document.body.removeChild(tempInput);
+      alert("Email telah disalin ke clipboard!");
     }
- </script>
+  </script>
 </body>
 </html>
